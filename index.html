@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Премия GORDOST’ 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="header__logo"></div>
+        <div class="header__info">
+            <h1 class="header__title">GORDOST’ 2025</h1>
+            <p class="header__subtitle header__subtitle--hero">
+                ГЛАВНАЯ ПРЕМИЯ PROF-АКТИВИСТОВ
+            </p>
+            <div class="countdown" id="countdown">
+                <span class="countdown__label">До конца голосования осталось:</span>
+                <div class="countdown__values">
+                    <div class="countdown__item">
+                        <span id="cd-days">00</span>
+                        <span class="countdown__unit">дней</span>
+                    </div>
+                    <div class="countdown__item">
+                        <span id="cd-hours">00</span>
+                        <span class="countdown__unit">часов</span>
+                    </div>
+                    <div class="countdown__item">
+                        <span id="cd-minutes">00</span>
+                        <span class="countdown__unit">минут</span>
+                    </div>
+                    <div class="countdown__item">
+                        <span id="cd-seconds">00</span>
+                        <span class="countdown__unit">секунд</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="top-nav">
+        <button id="btn-summary" class="top-nav__btn">
+            было дело в 2025
+        </button>
+    </nav>
+
+    <main class="main">
+        <section class="poll" id="poll-section">
+            <h2 class="poll__title">Основные номинации (обязательные)</h2>
+            <p class="poll__description">
+                Эти номинации будут на премии GORDOST’ 2025 в любом случае:
+            </p>
+
+            <ul class="poll__list">
+                <li>Открытие года</li>
+                <li>Председатель года</li>
+                <li>Заместитель года</li>
+                <li>Краса профсоюза</li>
+                <li>Самец профсоюза</li>
+                <li>ProfKing</li>
+                <li>ProfQueen</li>
+            </ul>
+
+            <h2 class="poll__title" style="margin-top: 24px;">
+                Номинации для голосования
+            </h2>
+            <p class="poll__description">
+                Выбери до двух дополнительных номинаций, которые ты хочешь увидеть на премии. Голос анонимный.
+            </p>
+
+            <div id="poll-status" class="poll__status poll__status_hidden">
+                <span id="poll-status-text"></span>
+            </div>
+
+            <div id="candidates" class="candidates">
+                <!-- Карточки номинаций для голосования будут сгенерированы скриптом -->
+            </div>
+        </section>
+
+        <section class="info" id="info-section">
+            <h2 class="info__title">Как будет проходить голосование</h2>
+            <p class="info__text">
+                Голосование за дополнительные номинации открыто до указанного времени.
+                После окончания таймера результаты будут зафиксированы, а выбранные номинации
+                попадут в программу премии GORDOST’ 2025.
+            </p>
+            <p class="info__text">
+                Следи за обновлениями и не забывай рассказать коллегам —
+                чем больше голосов, тем точнее выглядит итоговая сетка премии.
+            </p>
+        </section>
+
+        <section class="year-summary hidden" id="year-summary">
+
+            <button
+                    class="year-summary__close"
+                    id="summary-close"
+                    aria-label="Закрыть итоги года"
+            >
+                ✕
+            </button>
+
+
+            <h2 class="year-summary__title">Было дело в 2025</h2>
+            <p class="year-summary__subtitle">
+                Так а чтоже мы пережили в 2025?.
+            </p>
+
+            <div class="year-summary__grid">
+                <!-- Навигация по сторис -->
+                <button class="year-summary__nav year-summary__nav--prev" id="summary-prev" aria-label="Предыдущая история">‹</button>
+                <article class="year-summary__card" data-slide="0">
+                    <div class="year-summary__media">
+                        <!-- Скрытый плеер для трека итогов -->
+                        <audio id="summary-audio">
+                            <source src="track1.mp3" type="audio/mpeg" />
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Что было-то</h3>
+                        <p class="year-summary__card-text">в 2025</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <!-- Слайды 2–10, заполни текст под себя -->
+                <article class="year-summary__card" data-slide="1">
+                    <div class="year-summary__media year-summary__media--photo1">
+                        <!-- Скрытый плеер для второго трека итогов -->
+                        <audio id="summary-audio-2">
+                            <source src="track2.mp3" type="audio/mpeg" />
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Провели примерно 13</h3>
+                        <p class="year-summary__card-text">самых крутых мероприятий.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="2">
+                    <div class="year-summary__media year-summary__media--photo2">
+                        <audio>
+                            <source src="track3.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Слетали</h3>
+                        <p class="year-summary__card-text">на ВМС.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="3">
+                    <div class="year-summary__media year-summary__media--photo3">
+                        <audio>
+                            <source src="track4.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Провели ОВК</h3>
+                        <p class="year-summary__card-text">СППО.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="4">
+                    <div class="year-summary__media year-summary__media--photo4">
+                        <audio>
+                            <source src="track5.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Прошло ОВК</h3>
+                        <p class="year-summary__card-text">во многих ФПОС.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="5">
+                    <div class="year-summary__media year-summary__media--photo5">
+                        <audio>
+                            <source src="track6.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">За этот год</h3>
+                        <p class="year-summary__card-text">стали чуточку ближе.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="6">
+                    <div class="year-summary__media year-summary__media--photo6">
+                        <audio>
+                            <source src="track7.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Набрали новых</h3>
+                        <p class="year-summary__card-text">миньонов.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="7">
+                    <div class="year-summary__media year-summary__media--photo7">
+                        <audio>
+                            <source src="track8.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Этот трек</h3>
+                        <p class="year-summary__card-text">звучал везде.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="8">
+                    <div class="year-summary__media year-summary__media--photo8">
+                        <audio>
+                            <source src="track9.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Подтянули</h3>
+                        <p class="year-summary__card-text">медиа и орг комиссию.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <article class="year-summary__card" data-slide="9">
+                    <div class="year-summary__media year-summary__media--photo9">
+                        <audio>
+                            <source src="track10.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    <div>
+                        <h3 class="year-summary__card-title">Ну вот и всё, увидимся в 2026</h3>
+                        <p class="year-summary__card-text">Дальше - больше.</p>
+                    </div>
+                    <div class="year-summary__badge">PROF.EDITION</div>
+                </article>
+
+                <button class="year-summary__nav year-summary__nav--next" id="summary-next" aria-label="Следующая история">›</button>
+            </div>
+
+            <div class="year-summary__progress" id="summary-progress">
+                1 / 10
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
